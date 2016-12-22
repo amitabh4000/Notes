@@ -1,0 +1,92 @@
+Is it mandatory to implement all the methods of an interface?
+Yes, it is mandatory to implement all the methods in a class that implements an interface
+unless and until that class is an Abstract class. 
+You have two choices: - 
+implement every method required by the interface 
+or - declare the missing methods abstract in your class.
+
+//////////////
+In hierarchy of classes the static variable declared in the outer class
+can be used in each of the classes. Static inner class cannot access non-static
+fields of the outer class. It can have a static member.
+Non-static member classes cannot have a static member. 
+
+
+//******** In the example below the new Implement_name does not create 
+an object of the interface. It creates an object of the anonymous class.
+
+
+
+static Iterator<String> suffixes(final String s) {
+    return new Iterator<String>() {
+      int startindex = 0;
+
+      public boolean hasNext() {
+        return startindex < s.length();
+      }
+
+      public String next() {
+        return s.substring(startindex++);
+      }
+
+      public void remove() {
+        throw new UnsupportedOperationException();
+      }
+    };
+  }
+
+///// INterface vs Abstract class /////
+	
+This was ery helpful: 
+Interfaces do not express something like: 
+"A Doberman is a type of dog and every dog can walk" 
+   but more like 
+"This thing can walk"
+
+///////////////////////////////  
+  
+  
+  
+  
+  
+////// LeetCode ///////////////
+
+You can find patterns. Most of the times, cycle detection problems 
+can be solved using two-pointers.
+
+######################################################################
+ public class A extends B{
+   
+   public A(int a , int b , int c){
+   
+      super(a,b,c);
+   }
+ 
+ }
+
+ 
+# Here super(a,b,c) creates an object of class B.Then when constructor A 
+finishes, it will create an object of A which will extend B.
+
+###################################################################
+Autoclosable
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

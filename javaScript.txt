@@ -1,0 +1,33 @@
+Try to understand callbacks as it is very confusing to me:
+
+Okay let us take a most basic example from web designing:
+var server = http.createServer(function(request , response){
+                var filePath = false;
+                if(request.url == '/'){
+				filePath = "public/index.html";
+				}
+				else{
+				  filePath = "public" + request.url;
+				}
+                var absPath = "./" + filePath;
+				serveStatic(response , cache , abspath);
+             })
+			 
+			 
+Now, we can see that http.createServer is a function which
+takes a callback function as a parameter.
+
+var http = new Object();
+http.createServer = function(callback){
+                 
+                # Do the stuff of creating server 
+				# We will have a request and a response with us. 
+				# Suppose they are called req and res.  
+				callback(req,res);
+				# We call the callback function here and so it will 
+				# be implemented from here only.
+}			 
+When user types in the url of the website , a request will
+be generated from the browser(client) to the server to send the static files
+to populate the site. Server will check the address of the request url and 
+send the webpages associated with that page.
