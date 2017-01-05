@@ -1,0 +1,43 @@
+ng-directives:
+	ng-app  -----> This defines the scope of the angualrJS application
+	## For example <html ng-app = ""> or <div ng-app = "">
+	ng-app directive initializes an AngularJS application.
+
+    ng-init directive initializes application data.
+
+    The ng-model directive binds the value of HTML controls 
+	(input, select, textarea) to application data.
+	
+	ng-repeat: used to loop in an array.
+	
+Angular Expressions: 
+	ng-bind = "expression" in html tags OR {{expression}}
+	
+	
+	
+AngularJS objects: <div ng-init = "person = {firstName:"Amitabh" , 
+										    lastName = "Suman"}"
+## person.firstName
+## person.lastName
+Arrays: <div ng-init = "marks =[32,32,43,56]"
+
+
+## Directives
+
+In addition to all the built-in AngularJS directives, you can create your own directives.
+New directives are created by using the .directive function.
+           ##########
+<script>
+var app = angular.module("myApp",[]);
+app.directive("newDirective",function(){
+	return {
+	    restrict: "A",
+		template: "<h1>This is it</h1>"
+	};
+	});
+</script>
+            ##########
+
+
+	
+	

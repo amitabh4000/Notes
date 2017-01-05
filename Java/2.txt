@@ -1,0 +1,103 @@
+Java allows you to create a final member variable without assignment 
+but requires you to assign the value in either static initializer block, 
+if member variable is static or inside every constructor, 
+if member variable is non-static.
+
+If a collection is final we can insert, delete data from it.
+final Map<Integer, Integer> map = new HAshMap<>();
+map.put(1,1);   valid
+but map = new HashMap<>();
+
+Abstract and final are opposite to each other if used
+for a method.
+
+final cannot be used with a constructor.
+
+
+static final variable is known as constant in Java. 
+They are also known as a compile time constant because
+of their value at the time of compilation. 
+They are also inlined at the client end, means 
+if you are using a static final variable then its 
+value will be copied to your class at compile time.
+
+
+
+
+//********** Race condition wait(), notifyAll() ********//
+Let’s divide this whole operation into steps to see a possibility 
+of race condition between wait() and notify() method in Java, 
+we will use Produce Consumer thread example to understand 
+the scenario better:
+
+   1. The Producer thread tests the condition (buffer is full or not)
+   and confirms that it must wait (after finding buffer is full).
+
+   2. The Consumer thread sets the condition after consuming an 
+   element from a buffer.
+
+   3. The Consumer thread calls the notify () method; this goes unheard
+   since the Producer thread is not yet waiting.
+
+   4. The Producer thread calls the wait () method and goes into 
+   waiting state.
+
+
+
+
+Difference between ExecutorService.submit() and Executor.execute() 
+method in Java.Remember, the key difference between them is that
+submit() return a Future but execute() return nothing.
+
+                LAMBDA 
+
+
+When a lambda expression uses an assigned local variable from 
+its enclosing space there is an important restriction. 
+A lambda expression may only use local variable whose 
+value doesn't change. That restriction is referred as 
+"variable capture" which is described as; lambda 
+expression capture values, not variables.
+
+
+                  HEAP
+
+For the sake of Garbage collection Heap is divided into three 
+main regions named as New Generation, Old or Tenured 
+Generation and Perm space. New Generation of Java Heap 
+is part of Java Heap memory where newly created object
+ are stored, During the course of application many objects
+ created and died but those remain live they got moved to
+ Old or Tenured Generation by Java Garbage collector 
+ thread on Major or full garbage collection. Perm space
+ of Java Heap is where JVM stores Meta data about classes
+ and methods, String pool and Class level details
+ 
+ 
+ 
+                  HEAP AND STACK(not DS)
+Heap memory is used by all the parts of the application whereas 
+stack memory is used only by one thread of execution.
+Whenever an object is created, it’s always stored in the 
+Heap space and stack memory contains the reference to it.
+Stack memory only contains local primitive variables and
+reference variables to objects in heap space.
+Objects stored in the heap are globally accessible whereas
+ stack memory can’t be accessed by other threads.
+Memory management in stack is done in LIFO manner whereas 
+it’s more complex in Heap memory because it’s used globally.
+ Heap memory is divided into Young-Generation, Old-Generation
+ etc, more details at Java Garbage Collection.
+Stack memory is short-lived whereas heap memory lives from
+ the start till the end of application execution.
+We can use -Xms and -Xmx JVM option to define the startup size
+ and maximum size of heap memory. We can use -Xss to define the
+ stack memory size.
+When stack memory is full, Java runtime throws java.lang.
+StackOverFlowError whereas if heap memory is full, it throws
+ java.lang.OutOfMemoryError: Java Heap Space error.
+Stack memory size is very less when compared to Heap memory. 
+Because of simplicity in memory allocation (LIFO), stack 
+memory is very fast when compared to heap memory.
+
+

@@ -76,6 +76,39 @@ Autoclosable
 
 
 
+##***** Multiple inheritance ********###
+
+Multiple inheritance is not allowed in java because of the
+diamond problem. Other programming languages like c++ which 
+support multiple inheritance handle it accordingly.
+
+Using interfaces:
+
+interface A
+{
+public void methodAClassA();
+
+}
+interface B extends A{
+public void methodAClassA();
+}
+class C implements A,B {
+/*
+* Which is possible bcoz
+* if we use the above code there is no need of the
+* knowing which method instace could be used
+* so that the diamond problem doesnot occured
+*/
+}
+Multiple Inheritence is not supported in java just because of the Violation of super() keyword.
+When Ever you called the method/constructor of super class at that time JVm got confused,
+it cant decide which method you are calling.its something similar to Diamond problem.
+
+
+
+
+
+
 
 
 

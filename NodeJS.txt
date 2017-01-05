@@ -1,1 +1,7 @@
 Require is a synchronous operation.
+node REPL is like other REPL(The mode which we get 
+                             after typing keyword,
+							 node or python etc)
+							 
+Path from which a request is made or a referrer page
+     req.headers.referer
